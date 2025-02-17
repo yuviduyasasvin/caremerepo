@@ -1,0 +1,98 @@
+/* Header.css */
+.navbar-nav .nav-link:hover {
+    color: #3eb177 !important;
+    font-weight: 700;
+    
+  }
+ 
+  .contact-us-btn {
+   
+    background: linear-gradient(135deg, #868CFF 0%, #5E1F87 100%);
+    border-radius: 100px !important;
+    border: none !important; /* Remove border */
+    padding: 3px 12px !important; /* Reduced padding for smaller size */
+    font-size: 14px !important; /* Smaller font size */
+    height: 30px !important; /* Reduced height */
+    width: 120px !important; /* Reduced width */
+    display: flex !important; /* Ensure button is treated like a flex item */
+    align-items: center !important; /* Align items vertically */
+    justify-content: center !important; /* Ensure text is centered */
+    line-height: normal !important; /* Ensures no misalignment due to line height */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700 !important; /* Bold font weight */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Add hover effect with animation */
+.contact-us-btn {
+  background: linear-gradient(90deg, #868CFF 25%, #5E1F87 50%, #6B009D 75%, #868CFF 100%);
+  background-size: 200% 100%;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(107, 0, 157, 0.3);
+  animation: waveAnimation 3s infinite linear;
+}
+
+/* Reuse the wave animation */
+@keyframes waveAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+  header .navbar {
+    position: fixed !important; /* Ensures the navbar stays fixed at the top */
+    top: 0;
+    width: 100%; /* Spans the full width */
+    z-index: 1000; /* Keeps it above other elements */
+    padding: 10px 0; /* Maintain current gaps */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+  }
+
+  
+  /* Customize the lines inside the Navbar Toggler */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 25px; /* Adds consistent spacing between links */
+}
+
+/* Initially hide the "MENU" text */
+.menu-text {
+  display: none;
+  color: #000000;
+  font-size: 20px;
+  align-self: center; /* Align vertically with the toggle button */
+  margin-left: auto; /* Push the text to the right side */
+  margin-right: 1%;
+}
+
+/* Ensure Navbar.Toggle and MENU text are aligned without gap */
+.navbar-toggler {
+  display: flex;
+  align-items: center; /* Vertically align the toggle button content */
+  justify-content: center;
+  margin-right: 0; /* Remove any margin between toggler and the menu text */
+}
+
+/* Show "MENU" text only in mobile view */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    display: flex; /* Ensure toggler and MENU are on the same line */
+  }
+
+  .menu-text {
+    display: inline-block;
+
+  }
+}
+

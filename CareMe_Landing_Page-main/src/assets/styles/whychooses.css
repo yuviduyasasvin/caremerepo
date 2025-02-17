@@ -1,0 +1,237 @@
+/* News Section */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../fonts/coolvetica rg.ttf') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.why-section-t{
+  background-color:rgb(255, 255, 255);
+  color: #FFFFFF;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative; /* Allows positioning of pseudo-elements */
+  overflow: hidden; /* Ensures gradient overflow is hidden */
+  z-index: 1;
+  height: 1000px;
+}
+
+
+@media (max-width: 768px) {
+    .why-section-t {
+      height: 2000px; /* Increase height for mobile */
+      padding: 120px 20px; /* Optional: Adjust padding */
+    }
+  }
+
+.why-section-t::before, 
+.why-section-t::after {
+  content: '';
+  position: absolute;
+  
+  filter: blur(200px); /* Stronger blur for a glowing effect */
+  z-index: -1; /* Pushes the gradient behind the content */
+  pointer-events: none; /* Ensures it doesn't interfere with interaction */
+}
+
+/* Gradient for top-left corner */
+.why-section-t::before {
+  top: 0;
+  left: 0;
+  width: 150%; /* Increase size for better coverage */
+  height: 150%; /* Increase size for better coverage */
+  transform: translate(-30%, -30%); /* Adjust position */
+}
+
+/* Gradient for bottom-right corner */
+.why-section-t::after {
+  bottom: 0;
+  right: 0;
+  width: 150%; /* Increase size for better coverage */
+  height: 150%; /* Increase size for better coverage */
+  transform: translate(30%, 30%); /* Adjust position */
+}
+
+
+/* Gradient for bottom-right corner */
+.why-section-t::after {
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Adjust size as needed */
+  height: 50%; /* Adjust size as needed */
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .why-section-t::before,
+    .why-section-t::after {
+    width: 120%; /* Make the gradient larger for mobile */
+    height: 80%; /* Increase the height */
+    top: -20%; /* Adjust position for mobile */
+    left: -10%; /* Adjust position for mobile */
+    filter: blur(150px); /* Slightly lower blur for mobile */
+  }
+  
+}
+
+/* For tablet screens */
+@media (max-width: 768px) {
+    .why-section-t::before,
+    .why-section-t::after {
+    width: 110%; /* Slightly larger for tablets */
+    height: 75%; /* Slightly larger height */
+    top: 0; /* Adjust position */
+    left: 0; /* Adjust position */
+    filter: blur(180px); /* Moderate blur */
+  }
+}
+
+/* For larger screens (laptops and above) */
+@media (min-width: 768px) {
+  .why-section-t::before,
+  .why-section-t::after {
+    width: 100%; /* Default size for larger screens */
+    height: 40%; /* Default size */
+    filter: blur(200px); /* Stronger blur for larger screens */
+  }
+}
+
+
+
+.box-wh-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center boxes horizontally */
+  align-items: center; /* Align vertically */
+  width:100%; /* Covers 50% of the page width */
+  margin: auto; /* Centering */
+  gap: 10px; /* Space between boxes */
+}
+.box-wh-container-1stcol{
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+.box-wh-container-2stcol{
+  display: flex;
+  flex-direction: row;
+ 
+}
+@media (max-width: 768px) {
+  .box-wh-container-1stcol {
+    flex-direction: column; /* Stack boxes vertically */
+    display: flex;
+  }
+  .box-wh-container-2stcol{
+    flex-direction: column; /* Stack boxes vertically */
+    display: flex;
+  }
+}
+
+
+
+.box-why1 {
+  background-color:rgb(255, 255, 255); /* Change color as needed */
+  color:rgb(45, 126, 92); /* Text color */
+  padding: 5px 40px 5px 40px;
+  text-align: start;
+  border-radius: 10px; /* Optional rounded corners */
+  height: 300px; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
+}
+.whybiximagee{
+  margin: 20px 0px 23px 0px ;
+  width: 40px;
+}
+
+
+
+.why-section-t h3 {
+    color: rgb(46, 122, 92);
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .why-section-t h2 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Coolvetica', sans-serif;
+  }
+  
+  .why-section-t .news-description {
+    font-size: 20px ;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+ 
+  
+  /* Play and Pause button hover effects */
+  .play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+
+  /* For mobile screens */
+@media (max-width: 480px) {
+    .why-section-t h3 {
+    font-size: 32px; /* Adjust size for mobile */
+  }
+
+  .why-section-t h2 {
+    font-size: 24px; /* Adjust size for mobile */
+  }
+
+  .why-section-t .news-description {
+    font-size: 16px; /* Adjust size for mobile */
+  }
+
+  .why-section-t{
+    height: 1000px;
+  }
+}
+@media (max-width: 768px) {
+  .box-container {
+    flex-direction: column; /* Stack boxes vertically */
+    width: 100%; /* Adjust width */
+  }
+}
+
+
+.newsdescriptionn{
+  color: black;
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.profilewithtopics{
+    display: flex;
+    flex-direction: row;
+}
+.proflep{
+  width: 60px;
+  height: 60px;
+}
+.profnmee{
+  color: rgb(46,125,92);
+  font-size: 20px;
+}

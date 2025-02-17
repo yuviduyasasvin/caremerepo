@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../fonts/coolvetica rg.ttf') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.footer-container {
+  color: #e9e9e9;
+  padding: 5rem 5rem 0;
+  font-family: Arial, sans-serif;
+  position: relative; /* Enables positioning of the pseudo-element */
+  overflow: hidden; /* Ensures the gradient doesn't overflow the container */
+  z-index: 1;
+}
+
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Adjust size as needed */
+  height: 50%; /* Adjust size as needed */
+  background: radial-gradient(circle, rgb(222, 255, 224), #b1ffaa 70%);
+  filter: blur(200px); /* Creates a soft glow effect */
+  z-index: -1; /* Ensures the gradient is behind the content */
+  transform: translate(-30%, -30%); /* Positions the gradient in the top-left corner */
+  pointer-events: none; /* Prevents interaction with the pseudo-element */
+}
+
+
+.footer-content {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+  gap: 2rem; /* Space between columns */
+}
+
+.footer-column {
+  text-align: left; /* Align all content to the left */
+}
+
+
+.contact-column {
+  background-color: #d9e7d5; /* Add slight background for Contact Us */
+  padding: 1.5rem;
+  border-radius: 8px; /* Rounded corners for Contact Us */
+  
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column p {
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.footer-column li {
+  margin-bottom: 0.7rem;
+  font-size:16px;
+  color: #0c0101;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.newsletter-signup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  
+}
+
+.newsletter-signup input {
+  flex-grow: 1;
+  padding: 0.7rem;
+  border: solid #FFFFFF;
+  border-width: 1px 0 1px 1px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  color: #ffffff;
+  background: #0F0923;
+}
+
+.newsletter-signup button {
+  padding: 0.75rem 1rem;
+  background-color: #5E1F87;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-signup button:hover {
+  background-color: #8a48d4;
+}
+
+.newsletter-signup input::placeholder {
+  color: #aaaaaa;
+}
+
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+  flex-wrap: wrap; /* Makes it responsive */
+}
+.footer-legal span{
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+.footer-legal {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 1rem;
+  margin-left: 6rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-right: 20rem;
+
+}
+
+.footer-social a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.footer-social img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+
+}
+
+.footer-social img:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.copyright{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: #000000;
+  text-align: center;
+  ;
+}
+
+/* Adjust footer layout on small screens */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 3rem 2rem 0; /* Adjust padding for smaller screens */
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+    gap: 1rem;
+    margin-left: 0; /* Remove left margin for better alignment */
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .footer-column {
+    text-align: left; /* Ensure text is aligned to the left */
+    margin-bottom: 1rem; /* Add space between sections */
+  }
+
+  .contact-column {
+    background-color: #e4e4e4; /* Keep background color */
+    padding: 1rem; /* Reduce padding on smaller screens */
+    border-radius: 8px; /* Keep rounded corners */
+  }
+
+  /* Update newsletter-signup to place button next to input */
+  .newsletter-signup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    width: 100%; /* Ensure the container takes full width */
+    
+  }
+
+  .newsletter-signup input {
+    /* Rounded corners on the left */
+    
+    width: calc(100% - 90px); /* Ensure the input takes most of the space, leaving room for the button */
+   
+  }
+
+  .newsletter-signup button {
+    width: 80px; /* Set a fixed width for the button */
+
+    background-color: #65586e;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px 6px 6px 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .newsletter-signup button:hover {
+    background-color: #8a48d4;
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Stack terms and social icons */
+    align-items: center; /* Align items to the left */
+    margin-top: 2rem; /* Space between footer content and bottom links */
+  }
+
+  .footer-legal {
+    margin-left: 0; /* Align to the left */
+    margin-bottom: 1rem; /* Space between legal and social links */
+    gap: 2rem; /* Reduce gap between terms */
+  }
+
+  .footer-social {
+    margin-right: 0; /* Remove right margin */
+    gap: 1rem; /* Reduce gap between social icons */
+  }
+  .copyright{
+    font-size: 6px;
+  }
+
+  .footer-column li{
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .footer-legal span{
+    font-size: 10px;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* Ensure a single column layout */
+    margin-left: 0; /* No margin for better alignment */
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .footer-column {
+    margin-bottom: 1rem; /* Space between footer sections */
+  }
+
+  .footer-bottom {
+    gap: 1rem; /* Add spacing between legal and social icons */
+  }
+
+  .footer-legal,
+  .footer-social {
+    gap: 1.5rem; /* Reduce space further on very small screens */
+  }
+
+  .newsletter-signup input {
+    
+    width: calc(100% - 80px); /* Ensure input takes full width minus button width */
+  }
+
+  .newsletter-signup button {
+    width: 80px; /* Fixed width for button */
+  }
+  .copyright{
+    font-size: 6px;
+    color: #000000;
+  }
+}

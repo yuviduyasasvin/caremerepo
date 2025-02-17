@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../fonts/coolvetica rg.ttf') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.features-container {
+  color: white;
+  padding: 4rem 10%;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: rgb(220, 236, 226);
+  position: relative; /* Allows positioning of pseudo-elements */
+  overflow: hidden; /* Ensures gradient overflow is hidden */
+  z-index: 1;
+}
+.maintopicservices{
+  text-align: center; /* Centers text horizontally */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically (if needed) */
+  width: 100%; /* Ensures full width */
+}
+
+
+.features-container::before, 
+.features-container::after {
+  content: '';
+  position: absolute;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(233, 70, 218, 0.1) 70%);
+  filter: blur(200px); /* Stronger blur for a glowing effect */
+  z-index: -1; /* Pushes the gradient behind the content */
+  pointer-events: none; /* Ensures it doesn't interfere with interaction */
+}
+
+/* Gradient for top-left corner */
+.features-container::before {
+  top: 0;
+  left: 0;
+  width: 100%; /* Increase size for better coverage */
+  height: 50%; /* Increase size for better coverage */
+  transform: translate(30%, -30%); /* Adjust position */
+}
+
+/* Gradient for bottom-right corner */
+.features-container::after {
+  bottom: 0;
+  right: 0;
+  width: 150%; /* Increase size for better coverage */
+  height: 150%; /* Increase size for better coverage */
+  transform: translate(-30%, 30%); /* Adjust position */
+}
+
+/* Gradient for bottom-right corner */
+.features-container::after {
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Adjust size as needed */
+  height: 50%; /* Adjust size as needed */
+}
+
+  .features-header h2 {
+    color: rgb(46,125,92);
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+  }
+  .features-header p {
+    color: #000000;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 4rem 2rem; 
+  }
+
+
+  
+  .green-dot {
+    display: inline-block;
+    width: 8px;  /* Adjust size */
+    height: 8px; /* Adjust size */
+    background-color: green; /* Make the dot green */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 8px; /* Space between dot and text */
+    vertical-align: middle; /* Align with text */
+  }
+  
+
+
+  .feature-card {
+    background: radial-gradient(50% 50% at 50% 50%, #ffffff 0%, #f1f1f3 100%);
+    padding: 0;
+    border-radius: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, border 0.3s ease;
+    height: 620px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden; /* Ensures gradient overflow is hidden */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    
+  }
+  .feature-image {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    
+    filter: blur(80px); /* Creates the glowing effect */
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .feature-card:hover {
+    
+    border: 2px solid #0f5c36; /* Adds a highlight effect */
+  }
+  
+  .feature-card.animate__fadeInUp {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  .feature-card:focus,
+  .feature-card:active {
+    border: 2px solid #077a17; /* Yellow border on click or focus */
+    outline: none; /* Remove default focus outline */
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Positioned at the top */
+    left: 0;
+    width: 100%;
+    height: 15px; /* Height of the blur area */
+    filter: blur(10px); /* Apply blur effect for shadow */
+    z-index: -1; /* Place it behind the card */
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border: 2px solid #1b7400; /* Yellow border on hover */
+  }
+  
+  
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  .feature-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-grow: 1;
+  }
+
+  .feature-text {
+    flex-grow: 1;
+    padding: 1.5rem;
+  
+  }
+  .feature-card h3 {
+    color: #000000;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Inter', sans-serif; /* Specifies the Inter font */
+    font-weight: 700; /* Bold weight */
+    font-size: 20px; /* Font size */
+    line-height: 1.4; /* Optional: Adjusts line height for readability */
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 26px;
+  }
+  .feature-card p {
+    color: #000000; /* Updated font color */
+    font-family: 'Roboto', sans-serif; /* Specifies Roboto font */
+    font-weight: 400; /* Normal font weight */
+    font-size: 0.9rem; /* Font size */
+    line-height: 16.5px; /* Specifies line height */
+    font-size: 18px;
+    text-align: left; /* Justifies the paragraph text */
+    font-size: 11px;
+  }
+  
+  
+  .load-more-btn {
+    margin-top: 8rem;
+    padding: 1rem 3rem;
+    font-family: 'Inter', sans-serif; 
+    font-weight: 700; /* Bold weight */
+    font-size: 20px; /* Font size */
+    border: none;
+    background-color: #5a2d82;
+    color: white;
+    border-radius: 30px;
+    border: 2px solid #FFFFFF; /* Highlight border */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .load-more-btn:hover {
+    background-color: #8a48d4;
+    animation: waveAnimation 3s infinite linear;
+  }
+  
+  @keyframes waveAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  .load-more-btn:hover {
+    background: linear-gradient(90deg, #5a2d82 25%, #8a48d4 50%, #5a2d82 75%, #8a48d4 100%);
+    background-size: 200% 100%;
+    animation: waveAnimation 3s infinite linear;
+  }
+  
+  @media (max-width: 768px) {
+
+    .features-container {
+      padding: 4rem 5%;
+    }
+    .features-header h2 {
+      font-size: 30px;
+    }
+    .features-header p {
+      font-size: 16px;
+    }
+  
+    .features-grid {
+      display: flex; /* Use flexbox for a single column layout */
+      overflow: hidden; /* Hide overflow to only show one card at a time */
+      position: relative;
+      gap: 16px; /* Space between cards */
+      height: auto; /* Allow the height to adjust dynamically */
+    }
+  
+    .feature-card {
+      flex: 0 0 100%; /* Ensure each card takes the full width */
+      border: 2px solid #031a0d;
+      margin-bottom: 20px; /* Add space at the bottom of each card */
+      
+      height:min-content;
+    
+    }
+  
+    .feature-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  
+    .dot.active {
+      background-color: #2e850c;
+    }
+  
+    .feature-card p {
+      
+     text-align: left;
+    }
+    .feature-card:hover {
+      transform: translateY(0px);
+    }
+  }
+  

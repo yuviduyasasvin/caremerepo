@@ -1,0 +1,56 @@
+/* Scroll Indicator Container */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  pointer-events: none; /* Prevent user interactions */
+}
+
+.scroll-indicator span {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  display: block;
+}
+
+/* Mouse Icon */
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #0c850c;
+  border-radius: 50px;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Black Dot Inside the Mouse */
+.mouse .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #e2203afb;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollDot 1.5s infinite;
+}
+
+/* Dot Animation */
+@keyframes scrollDot {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  50% {
+    top: 24px;
+    opacity: 0.5;
+  }
+  100% {
+    top: 8px;
+    opacity: 1;
+  }
+}

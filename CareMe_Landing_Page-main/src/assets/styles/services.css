@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../fonts/coolvetica rg.ttf') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.services-container {
+  padding: 4rem 0 0 0;
+  text-align: center;
+  background-color: #06071b;
+  color: #ffffff;
+  position: relative; /* Enables positioning of pseudo-elements */
+  overflow: hidden; /* Ensures gradients don’t overflow the container */
+  z-index: 1; /* Ensures the container is above the pseudo-elements */
+  padding-top: 5% !important;
+}
+
+.services-container::before, 
+.services-container::after {
+  content: '';
+  position: absolute;
+  background: radial-gradient(circle, rgba(233, 70, 218, 0.5), rgba(233, 70, 218, 0) 70%);
+  filter: blur(200px); /* Creates a glowing blur effect */
+  z-index: -1; /* Ensures the gradient is behind the content */
+  pointer-events: none; /* Prevents interaction with the pseudo-elements */
+}
+
+/* Gradient for top-left corner */
+.services-container::before {
+  top: 0;
+  left: 0;
+  width: 150%; /* Adjust size for better coverage */
+  height: 150%;
+  transform: translate(30%, -30%); /* Adjust position */
+}
+
+/* Gradient for bottom-right corner */
+.services-container::after {
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Adjust size for better coverage */
+  height: 50%;
+  transform: translate(-30%, 30%); /* Adjust position */
+}
+
+.services-header h2 {
+  color: #ff8c00;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.services-header p {
+  color: #cccccc;
+  margin-bottom: 4rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Full width of the viewport */
+  margin: 0; /* Remove any default margin */
+  padding: 0;
+}
+
+.ash-box {
+  background-color: rgba(192, 192, 192, 0.1); /* Ash color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%; /* Full width */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include border in box size */
+}
+
+.services-slider {
+  display: flex;
+  transition: transform 1s linear; /* Smooth scrolling */
+  margin-bottom: 2rem;
+}
+
+.service-box {
+  flex: 0 0 25%; /* Show 4 services at once */
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.service-box img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.service-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.service-box p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.4;
+  max-width: 90%; /* Limit the width of the paragraph for better layout */
+  margin: 0 auto; /* Center-align the paragraph text */
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .service-box {
+    flex: 0 0 33.33%; /* Show 3 services at a time */
+  }
+
+  .service-box img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .services-header p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .services-container {
+    padding-bottom: 10% !important;
+    padding-top: 10% !important;
+  }
+
+  .service-box {
+    flex: 0 0 50%; /* Show 2 services at a time */
+  }
+
+  .service-box img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .services-header p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .service-description {
+    font-size: 10px; /* Smaller font size */
+    line-height: 20px; /* Adjust line height for readability */
+    padding: 0 10px; /* Add padding to ensure readability */
+  }
+  
+  
+}
+
+@media (max-width: 480px) {
+
+  
+  .services-container {
+    padding-bottom: 10% !important;
+    padding-top: 10% !important;
+  }
+
+  .service-box {
+    flex: 0 0 100%; /* Show 1 service at a time */
+  }
+
+  .service-box img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .services-header h2 {
+    font-size: 32px;
+  }
+
+  .services-header p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+ 
+  .service-description {
+    font-size: 10px;
+    line-height: 18px;
+    overflow: hidden;
+  }
+}
+
+/* Dots for Navigation */
+.slider-dots {
+  display: flex;
+  justify-content: center; /* Center-align dots */
+  align-items: center; /* Vertically center */
+  margin-top: 15px; /* Space above dots */
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc; /* Default dot color */
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #ff6600; /* Highlight active dot */
+}
+
+/* Hide dots for larger screens */
+@media (min-width: 481px) {
+  .slider-dots {
+    display: none;
+  }
+}
+
+/* CSS */
+.mobile-only-break {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-break {
+    display: inline;
+  }
+}
